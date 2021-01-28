@@ -415,8 +415,9 @@ def _check_can_add(self, user, related_model):
     if can_add:
         app_label = related_model._meta.app_label
         model = related_model._meta.object_name.lower()
-        self.widget.add_link = reverse(
-                f'admin:{app_label}_{model}_add') + '?_popup=1'
+        #self.widget.add_link = reverse(
+        #        f'admin:{app_label}_{model}_add') + '?_popup=1'
+        self.widget.add_link = reverse('clientcreate') + '?_popup=1'
 
 
 def autoselect_fields_check_can_add(form, model, user):
