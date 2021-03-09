@@ -141,5 +141,5 @@ class LookupChannel:
         Raises:
             PermissionDenied
         """
-        if not request.user.is_staff:
-           pass 
+        if not request.user.has_perm('vizit.view_client'):
+            raise PermissionDenied
